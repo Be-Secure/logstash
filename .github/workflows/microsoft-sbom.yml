@@ -26,6 +26,7 @@ jobs:
       run: |
         mkdir SBOMOUTPUT
         $RUNNER_TEMP/sbom-tool generate -b SBOMOUTPUT/ -bc . -pn ${{ github.repository }} -pv v8.11.4 -ps wipro -nsb https://github.com/elastic/logstash
+    - name: Upload SBOM artifact
       uses: actions/upload-artifact@v3
       with:
         name: sbom
